@@ -30,7 +30,8 @@ public class FarmCollectorController {
     }
 
     @PostMapping("/farms")
-    public ResponseEntity<ApiResponse<Farm>> createFarm(@RequestBody FarmRequestDto requestDto) {
+    public ResponseEntity<ApiResponse<Farm>> createFarm(@RequestBody FarmRequestDto requestDto)
+    {
         Farm farm = farmService.createFarm(requestDto);
         ApiResponse<Farm> response = new ApiResponse<>("Farm Created Successfully", farm);
         return ResponseEntity.status(201).body(response);
